@@ -250,7 +250,12 @@ public abstract class ReportProcessor {
 
     if (dateRangeType.equals(
         ReportDefinitionDateRangeType.CUSTOM_DATE) && !reportDefinitionReportType.equals(
-        ReportDefinitionReportType.CAMPAIGN_NEGATIVE_KEYWORDS_PERFORMANCE_REPORT)) {
+        ReportDefinitionReportType.CAMPAIGN_NEGATIVE_KEYWORDS_PERFORMANCE_REPORT)
+    		&& !reportDefinitionReportType.equals(ReportDefinitionReportType.CAMPAIGN_NEGATIVE_LOCATIONS_REPORT)
+    		&& !reportDefinitionReportType.equals(ReportDefinitionReportType.CAMPAIGN_SHARED_SET_REPORT)
+    		&& !reportDefinitionReportType.equals(ReportDefinitionReportType.SHARED_SET_REPORT)
+    		&& !reportDefinitionReportType.equals(ReportDefinitionReportType.SHARED_SET_CRITERIA_REPORT)
+    		) {
       DateRange dateRange = new DateRange();
       dateRange.setMin(dateStart);
       dateRange.setMax(dateEnd);
